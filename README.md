@@ -22,6 +22,7 @@ https://www.erdcloud.com/d/sj7ddyQY4FYsWgSCo <br>
 # 추가하고 싶은 기능
 ### 도서
 - [ ] 읽는 중인 도서에 대한 페이지 지정 기능
+- [ ] 제공되는 베스트 셀러 및 추천도서 기반 도서 추천 기능
 ### 메모
 - [ ] 도서의 페이지를 지정해 메모를 추가하는 기능
 ### 팔로우
@@ -38,3 +39,4 @@ https://www.erdcloud.com/d/sj7ddyQY4FYsWgSCo <br>
 - ElasticSearch
 - JWT
 - Spring Security
+- 알라딘 Open API
