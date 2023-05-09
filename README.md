@@ -1,6 +1,6 @@
 # MemoAndBook 
 -도서와 관련된 메모를 기록하고, 도서 정보를 추천해주는 SNS <br>
-# 프로젝트 구조 <br>
+# 프로젝트 구조(ERD) <br>
 https://www.erdcloud.com/d/sj7ddyQY4FYsWgSCo <br>
 ![image](https://user-images.githubusercontent.com/71738723/236975725-d0b17d23-07af-4fc6-b95d-e94213fb7b5f.png)
 
