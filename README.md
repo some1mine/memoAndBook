@@ -29,7 +29,7 @@ https://www.erdcloud.com/d/sj7ddyQY4FYsWgSCo <br>
 - [ ] 메모에 대한 좋아요 기능
 - [ ] 메모에 대한 댓글 기능
 
-기술 스택
+# 기술 스택
 - Spring-boot(Java)
 - MySQL
 - JPA
