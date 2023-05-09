@@ -2,7 +2,7 @@
 -도서와 관련된 메모를 기록하고, 도서 정보를 추천해주는 SNS <br>
 # 프로젝트 구조(ERD) <br>
 https://www.erdcloud.com/d/sj7ddyQY4FYsWgSCo <br>
-![image](https://user-images.githubusercontent.com/71738723/236977334-9c07641d-9411-421a-8f91-90227bbd0cd4.png)
+![image](https://user-images.githubusercontent.com/71738723/236983659-a787cd03-8002-4dde-a4c1-73f465e82e63.png)
 
 # 기본 기능
 ### 회원
