@@ -4,6 +4,7 @@
 https://www.erdcloud.com/d/sj7ddyQY4FYsWgSCo <br>
 ![image](https://github.com/some1mine/memoAndBook/assets/71738723/8f939b30-22b3-499c-a79d-8e0976ae2987)
 # 도서 정보 테이블 <br>
+![image](https://github.com/some1mine/memoAndBook/assets/71738723/b2450ae3-b5cd-468b-9d9c-cadd7dd068c0)
 
 
 # 기본 기능
