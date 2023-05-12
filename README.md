@@ -9,8 +9,8 @@ https://www.erdcloud.com/d/sj7ddyQY4FYsWgSCo <br>
 
 # 기본 기능
 ### 회원
-- [ ] 회원가입
-- [ ] 로그인
+- [X] 회원가입
+- [X] 로그인
 - [ ] 로그아웃
 ### 도서
 - [ ] 도서 정보 검색
