@@ -12,6 +12,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Entity
 @Getter
@@ -30,7 +31,6 @@ public class User {
   private LocalDateTime createdDate;
   private LocalDateTime updatedDate;
   private LocalDateTime deletedDate;
-
   public static User from(SignUpForm form) {
     return User.builder()
         .email(form.getEmail())
@@ -38,5 +38,12 @@ public class User {
         .name(form.getName())
         .createdDate(LocalDateTime.now())
         .build();
+  }
+  public User hashPassword(PasswordEncoder passwordEncoder) {
+    this.password = passwordEncoder.encode(this.password);
+    return this;
+  }
+  public boolean checkPassword(String plainPassword, PasswordEncoder passwordEncoder) {
+    return passwordEncoder.matches(plainPassword, this.password);
   }
 }

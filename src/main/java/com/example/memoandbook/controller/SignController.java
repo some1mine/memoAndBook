@@ -21,8 +21,8 @@ public class SignController {
   private final JwtAuthenticationProvider provider;
 
   @PostMapping("/signup")
-  public ResponseEntity<UserDto> signUp(@RequestBody SignUpForm form) {
-    return ResponseEntity.ok(UserDto.from(signService.signUp(form)));
+  public ResponseEntity<UserDto.Response> signUp(@RequestBody SignUpForm form) {
+    return ResponseEntity.ok(UserDto.Response.from(signService.signUp(form)));
   }
 
   @PostMapping("/signIn")

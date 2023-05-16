@@ -8,7 +8,7 @@ import org.apache.tomcat.util.codec.binary.Base64;
 
 public class Aes256Util {
   public static String alg = "AES/CBC/PKCS5Padding";
-  private static final String KEY = "MEMOANDBOOKKEYISMEMOANDBOOKKEY";
+  private static final String KEY = "MEMOANDBOOKKEYISMEMOANDBOOKKEY01";
   private static final String IV = KEY.substring(0, 16);
 
   public static String encrypt(String text) {
@@ -20,6 +20,7 @@ public class Aes256Util {
       byte[] encrypted = cipher.doFinal(text.getBytes(StandardCharsets.UTF_8));
       return Base64.encodeBase64String(encrypted);
     } catch (Exception e) {
+      e.printStackTrace();
       return null;
     }
   }
