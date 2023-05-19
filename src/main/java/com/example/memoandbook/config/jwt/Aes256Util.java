@@ -1,4 +1,4 @@
-package com.example.memoandbook.config;
+package com.example.memoandbook.config.jwt;
 
 import java.nio.charset.StandardCharsets;
 import javax.crypto.Cipher;

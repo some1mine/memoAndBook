@@ -1,11 +1,14 @@
 package com.example.memoandbook.domain.model;
 
 import com.example.memoandbook.domain.form.SignUpForm;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.time.LocalDateTime;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -31,6 +34,9 @@ public class User {
   private LocalDateTime createdDate;
   private LocalDateTime updatedDate;
   private LocalDateTime deletedDate;
+  @OneToMany
+  @JsonManagedReference
+  private List<UserBook> userBooks;
   public static User from(SignUpForm form) {
     return User.builder()
         .email(form.getEmail())
