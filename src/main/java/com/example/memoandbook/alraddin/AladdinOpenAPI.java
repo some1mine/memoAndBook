@@ -4,7 +4,6 @@ import com.example.memoandbook.domain.model.Book;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import javax.xml.parsers.SAXParser;
@@ -29,14 +28,12 @@ public class AladdinOpenAPI {
     map.put("SearchTarget", "Book");
     map.put("output", "xml");
 
-    StringBuffer sb = new StringBuffer();
-    Iterator<String> iter = map.keySet().iterator();
-    while (iter.hasNext()) {
-      String key = iter.next();
+    StringBuilder sb = new StringBuilder();
+    for (String key : map.keySet()) {
       String val = map.get(key);
       sb.append(key).append("=").append(val).append("&");
     }
-    return KEYWORD_BASE_URL + sb.toString();
+    return KEYWORD_BASE_URL + sb;
   }
   public static String getRecommendUrl(String queryType) throws Exception {
     Map<String, String> map = new HashMap<>();
@@ -48,14 +45,12 @@ public class AladdinOpenAPI {
     map.put("output", "xml");
     map.put("Version", "20131101");
 
-    StringBuffer sb = new StringBuffer();
-    Iterator<String> iter = map.keySet().iterator();
-    while (iter.hasNext()) {
-      String key = iter.next();
+    StringBuilder sb = new StringBuilder();
+    for (String key : map.keySet()) {
       String val = map.get(key);
       sb.append(key).append("=").append(val).append("&");
     }
-    return RECOMMEND_BASE_URL + sb.toString();
+    return RECOMMEND_BASE_URL + sb;
   }
 
   public static String getFindOneUrl(String isbn13) throws Exception {
@@ -68,26 +63,12 @@ public class AladdinOpenAPI {
     map.put("output", "xml");
     map.put("Version", "20131101");
 
-    StringBuffer sb = new StringBuffer();
-    Iterator<String> iter = map.keySet().iterator();
-    while (iter.hasNext()) {
-      String key = iter.next();
+    StringBuilder sb = new StringBuilder();
+    for (String key : map.keySet()) {
       String val = map.get(key);
       sb.append(key).append("=").append(val).append("&");
     }
-    return FIND_ONE_URL + sb.toString();
-  }
-
-  public static void main(String[] args) throws Exception {
-//    String searchUrl = getKeyWordUrl("세이노의 가르침", "keyword");
-//    String recommendUrl = getRecommendUrl("bestSeller");
-    String url = getFindOneUrl("9791168473690");
-    AladdinOpenAPIHandler api = new AladdinOpenAPIHandler();
-    api.parseXml(url);
-    for(Item item : api.items) {
-      System.out.println(item);
-      System.out.println(item.bestRank);
-    }
+    return FIND_ONE_URL + sb;
   }
 
   public static List<Book> getBooksFromKeyword(String keyword) throws Exception {
@@ -194,6 +175,7 @@ public class AladdinOpenAPI {
         }
       }
     }
+
     public void parseXml(String xmlUrl) throws Exception {
       SAXParserFactory spf = SAXParserFactory.newInstance();
       SAXParser sp = spf.newSAXParser();

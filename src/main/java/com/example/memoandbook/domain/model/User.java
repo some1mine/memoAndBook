@@ -37,6 +37,12 @@ public class User {
   @OneToMany
   @JsonManagedReference
   private List<UserBook> userBooks;
+  @OneToMany
+  @JsonManagedReference
+  private List<Memo> memos;
+  @OneToMany
+  @JsonManagedReference
+  private List<Category> categories;
   public static User from(SignUpForm form) {
     return User.builder()
         .email(form.getEmail())
