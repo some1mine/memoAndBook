@@ -1,4 +1,4 @@
-package com.example.memoandbook.config;
+package com.example.memoandbook.config.jwt;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

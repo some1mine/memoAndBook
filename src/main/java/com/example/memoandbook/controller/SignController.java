@@ -1,6 +1,6 @@
 package com.example.memoandbook.controller;
 
-import com.example.memoandbook.config.JwtAuthenticationProvider;
+import com.example.memoandbook.config.jwt.JwtAuthenticationProvider;
 import com.example.memoandbook.domain.dto.UserDto;
 import com.example.memoandbook.domain.form.SignInForm;
 import com.example.memoandbook.domain.form.SignUpForm;

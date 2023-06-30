@@ -1,4 +1,4 @@
-package com.example.memoandbook.config;
+package com.example.memoandbook.config.jwt;
 
 import com.example.memoandbook.domain.common.UserVo;
 import io.jsonwebtoken.*;
