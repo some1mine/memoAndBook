@@ -18,9 +18,9 @@ https://www.erdcloud.com/d/sj7ddyQY4FYsWgSCo <br>
 - [X] 나의 도서에 추가
 ### 메모
 - [X] 추가한 도서에 대한 메모 추가
-- [ ] 도서 정보 상세 조회시 메모 정보 함께 조회
-- [ ] 카테고리 추가
-- [ ] 메모에 대한 카테고리 지정
+- [X] 도서 정보 상세 조회시 메모 정보 함께 조회
+- [X] 카테고리 추가
+- [X] 메모에 대한 카테고리 지정
 
 # 추가하고 싶은 기능
 ### 도서
@@ -39,7 +39,6 @@ https://www.erdcloud.com/d/sj7ddyQY4FYsWgSCo <br>
 - Spring-boot(Java)
 - MySQL
 - JPA
-- ElasticSearch
 - JWT
 - Spring Security
 - Swagger

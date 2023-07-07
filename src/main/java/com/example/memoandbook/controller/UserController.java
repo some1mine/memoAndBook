@@ -10,6 +10,7 @@ import com.example.memoandbook.domain.dto.UserBookDto;
 import com.example.memoandbook.domain.form.MemoForm;
 import com.example.memoandbook.domain.model.User;
 import com.example.memoandbook.service.BookService;
+import com.example.memoandbook.service.MemoService;
 import com.example.memoandbook.service.UserService;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -28,6 +29,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class UserController {
   private final JwtAuthenticationProvider provider;
+  private final MemoService memoService;
   private final BookService bookService;
   private final UserService userService;
   @GetMapping("/searchBook")
@@ -49,6 +51,15 @@ public class UserController {
     return ResponseEntity.ok(BookDto.from(bookService.findABook(isbn13)));
   }
 
+  @GetMapping("/getMyBooks")
+  public ResponseEntity<List<UserBookDto>> getMyBooks(@RequestHeader("X-AUTH-TOKEN") String token) {
+    UserVo userVo = provider.getUserVo(token);
+    User user = userService.findByIdAndEmail(userVo.getId(), userVo.getEmail())
+        .orElseThrow(() -> new CustomException(ErrorCode.USER_NOT_FOUND));
+
+    return ResponseEntity.ok(bookService.getMyBooks(user).stream().map(UserBookDto::from).collect(Collectors.toList()));
+  }
+
   @PostMapping("saveBook")
   public ResponseEntity<UserBookDto> saveBook(@RequestHeader("X-AUTH_TOKEN") String token, @RequestBody String isbn13) {
     UserVo userVo = provider.getUserVo(token);
@@ -64,7 +75,7 @@ public class UserController {
     userService.findByIdAndEmail(userVo.getId(), userVo.getEmail())
         .orElseThrow(() -> new CustomException(ErrorCode.USER_NOT_FOUND));
 
-    return ResponseEntity.ok(MemoDto.from(bookService.saveMemoInMyBook(form)));
+    return ResponseEntity.ok(MemoDto.from(memoService.saveMemoInMyBook(form)));
   }
 }
 

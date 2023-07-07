@@ -14,4 +14,5 @@ public class MemoForm {
   private String isbn13;
   private String content;
   private Integer page;
+  private Long categoryId;
 }
